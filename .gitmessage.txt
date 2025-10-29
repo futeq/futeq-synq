@@ -1,0 +1,31 @@
+# -------------------------------------------------------
+# Conventional Commit message template
+# -------------------------------------------------------
+# Format:
+#   <type>(optional scope): <short summary>
+#
+# Allowed types:
+#   feat      – new feature
+#   fix       – bug fix
+#   perf      – performance improvement
+#   refactor  – internal refactor
+#   docs      – documentation changes
+#   test      – test changes
+#   chore     – build / CI / tooling
+#
+# Examples:
+#   feat(results): add implicit conversion from Error to Result
+#   fix(web): correlation ID not added to response
+#   docs: update usage examples in README
+#
+# -------------------------------------------------------
+# Optional body (longer explanation, motivation, references)
+#
+#
+# -------------------------------------------------------
+# Optional footer(s)
+#   BREAKING CHANGE: <describe breaking change>
+#   Closes #123, Relates-to #456
+#
+#
+# Lines starting with # are ignored.
