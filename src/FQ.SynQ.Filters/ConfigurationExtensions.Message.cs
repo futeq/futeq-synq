@@ -4,8 +4,9 @@ using FQ.SynQ.Filters.DomainEvents;
 using FQ.SynQ.Filters.Idempotency;
 using FQ.SynQ.Filters.Performance;
 using FQ.SynQ.Filters.UnitOfWork;
+using FQ.SynQ.Filters.Validation;
 
-namespace FQ.SynQ.Filters.Validation;
+namespace FQ.SynQ.Filters;
 
 public static partial class ConfigurationExtensions
 {

@@ -4,7 +4,32 @@
     <TargetFrameworks>net8.0;net9.0</TargetFrameworks>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    
+    <!-- NuGet metadata -->
+    <PackageId>FQ.Synq.Filters</PackageId>
+    <Title>FQ.Synq.Filters</Title>
+    <Description>Cross-cutting filters for FQ.Synq (validation, authorization, performance, etc.)</Description>
+    <Authors>Futeq</Authors>
+    <Company>Futeq</Company>
+    <RepositoryUrl>https://github.com/futeq/futeq-synq</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression> 
+    <PackageTags>CQRS;Mediator;Pipeline;Filters;Futeq;Synq</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
+    <PackageIcon>icon.png</PackageIcon>
+    <RepositoryType>git</RepositoryType>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../../README.md" Pack="true" PackagePath="" />
+    <None Include="../../LICENSE" Pack="true" PackagePath="" />
+    <None Include="../../icon.png" Pack="true" PackagePath="" />
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FluentValidation" Version="12.0.0" />
