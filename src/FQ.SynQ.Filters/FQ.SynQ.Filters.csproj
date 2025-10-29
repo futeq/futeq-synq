@@ -11,8 +11,7 @@
     <Description>Cross-cutting filters for FQ.Synq (validation, authorization, performance, etc.)</Description>
     <Authors>Futeq</Authors>
     <Company>Futeq</Company>
-    <RepositoryUrl>https://github.com/futeq/futeq-synq</RepositoryUrl>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression> 
+    <RepositoryUrl>https://github.com/futeq/futeq-synq</RepositoryUrl> 
     <PackageTags>CQRS;Mediator;Pipeline;Filters;Futeq;Synq</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>true</IncludeSymbols>

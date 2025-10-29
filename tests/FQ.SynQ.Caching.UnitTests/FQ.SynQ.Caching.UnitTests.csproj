@@ -22,7 +22,7 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\src\FQ.SynQ.Caching\FQ.SynQ.Caching.csproj" />
+      <ProjectReference Include="..\..\src\FQ.SynQ.Caching\FQ.SynQ.Caching.csproj" />
     </ItemGroup>
 
 </Project>

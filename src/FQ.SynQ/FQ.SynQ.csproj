@@ -8,11 +8,10 @@
     <!-- NuGet metadata -->
     <PackageId>FQ.Synq</PackageId>
     <Title>Synq</Title>
-    <Description>Core CQRS & pipeline orchestration library by Futeq — for .NET 8 and .NET 9</Description>
+    <Description>Core CQRS &amp; pipeline orchestration library by Futeq — for .NET 8 and .NET 9</Description>
     <Authors>Futeq</Authors>
     <Company>Futeq</Company>
-    <RepositoryUrl>https://github.com/futeq/futeq-synq</RepositoryUrl>
-    <PackageLicenseExpression>MIT</PackageLicenseExpression> 
+    <RepositoryUrl>https://github.com/futeq/futeq-synq</RepositoryUrl> 
     <PackageTags>CQRS;Mediator;Pipeline;Filters;Futeq;Synq</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>true</IncludeSymbols>
@@ -33,12 +32,6 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.10" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="../../README.md" Pack="true" PackagePath="" />
-    <None Include="../../LICENSE" Pack="true" PackagePath="" />
-    <None Include="../../icon.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
