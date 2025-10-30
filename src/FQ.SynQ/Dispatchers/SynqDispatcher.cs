@@ -6,23 +6,25 @@ namespace FQ.SynQ.Dispatchers;
 
 public sealed class SynqDispatcher : ISynq
 {
-    private readonly IServiceProvider _sp;
+    private readonly IServiceProvider _root;
     private readonly IFilterCatalog _catalog;
 
     public SynqDispatcher(IServiceProvider sp, IFilterCatalog catalog)
     {
-        _sp = sp;
+        _root = sp;
         _catalog = catalog;
     }
 
     public Task<TOut> Dispatch<TOut>(IMessage<TOut> message, CancellationToken ct = default)
     {
+        using var scope = _root.CreateScope();
+        var sp = scope.ServiceProvider;
         var msgType = message.GetType();
         var outType = typeof(TOut);
 
         var handlerType = typeof(IMessageHandler<,>).MakeGenericType(msgType, outType);
-        var handler = _sp.GetService(handlerType)
-            ?? throw new InvalidOperationException($"No handler registered for {msgType.FullName}.");
+        var handler = sp.GetService(handlerType)
+                      ?? throw new InvalidOperationException($"No handler registered for {msgType.FullName}.");
 
         var handle = handlerType.GetMethod(nameof(IMessageHandler<IMessage<TOut>, TOut>.Handle))!;
 
@@ -40,7 +42,7 @@ public sealed class SynqDispatcher : ISynq
             }
         };
 
-        var filters = _catalog.CreateFilters(msgType, outType, _sp).ToArray();
+        var filters = _catalog.CreateFilters(msgType, outType, sp).ToArray();
         var next = terminal;
         
         foreach (var f in filters.Reverse())
