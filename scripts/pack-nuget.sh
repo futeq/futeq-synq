@@ -2,16 +2,13 @@
 set -euo pipefail
 
 # Inputs:
-#   NEXT_VERSION (required) — provided by semantic-release via env
+#   NEXT_VERSION (required) — provided by GitVersion (nuGetVersionV2) via env
 # Behavior:
 #   Packs ALL *.csproj under ./src into ./artifacts
 
-echo "== prepare.sh: packing src/** to artifacts with version: ${NEXT_VERSION:?NEXT_VERSION missing}"
+echo "== pack-nuget.sh: packing src/** to artifacts with version: ${NEXT_VERSION:?NEXT_VERSION missing}"
 
 mkdir -p artifacts
-
-# Optional: ensure restore once up-front (faster)
-dotnet restore
 
 found=0
 # Use -print0 to handle any spaces safely
@@ -19,6 +16,7 @@ while IFS= read -r -d '' csproj; do
   echo "Packing: $csproj"
   dotnet pack "$csproj" \
     -c Release \
+    --no-build \
     -o artifacts \
     /p:ContinuousIntegrationBuild=true \
     /p:PackageVersion="$NEXT_VERSION"
